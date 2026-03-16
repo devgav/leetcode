@@ -36,6 +36,7 @@ def dfs_matrix(rowIdx, colIdx):
 
 **Adjacency List**:
 When to use:  
+	- if you cannot find the neighbors of a specific node without scanning the entire list
 ```python
 # directed
 def build_adj_list_directed(nodes_list):
@@ -79,10 +80,8 @@ for node in range(num_of_nodes):
 ```
 
 **Cycle Detection**:
-When to use:  
+When to use: Detecting cycles 
 Key "trigger" phrase:
-- if there's no possible path return none
-- 
 ```python
 # for directed graph
 visited = set()
@@ -100,7 +99,7 @@ def dfs(node):
 	# BACKTRACK
 	visiting.remove(node)
 	visited.add(node)
-	# do something 
+	# do something with the node
 	return False
 for i in range(n):
 	if i not in visited:
@@ -138,13 +137,35 @@ def has_cycle_undirected(n, edges):
 **Backtracking**:
 When to use:  
 Key "trigger" phrase:
+- find all possible
+- return any valid solution
+- cannot use the same element twice
 ```python
-
+def dfs(node, path, visited):
+	# goal: should be what happens when we hit the node we need
+	if basecase is met:
+		process the node
+	
+	for neighbor in graph[node]:
+		# choose node
+		path.append(neighbor)
+		# recurse on node
+		dfs(neighbor, path, visited)
+		# remove node
+		path.pop()
 ```
 
 **Topological Sort**:
 When to use:  
+- **output a list/stack**
+- continue until all nodes are processed
+- only possible on dags
 Key "trigger" phrase:
+- "A" MUST be done before "B" (ORDERING MATTERS)
+- Longest path in a DAG
 ```python
-
+def dfs_cycle_detection(node):
+	# dfs graph cycle detection algorithm
+# KEY here is that we have to reverse the stack, since dfs goes to deepest nodes first
+return stack[::-1]
 ```
