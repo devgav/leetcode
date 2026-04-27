@@ -66,11 +66,11 @@ Key "trigger" phrase:
 	- Count the **number of provinces**
 ```python
 def dfs(node):
-	if node in visited:
-		return
+	# process node
 	visited.add(node)
 	for neighbor in adjList[node]:
-		dfs_adj_list(neighbor)
+		if neighbor not in visited:
+			dfs_adj_list(neighbor)
 
 # global loop allows us to find new components that are disconnected
 for node in range(num_of_nodes):
