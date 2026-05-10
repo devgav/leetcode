@@ -23,5 +23,8 @@ def isCycle(node):
 **Middle of LinkedList**
 ```python
 def find_middle(node):
-	
+	fast, slow = node, node 
+	while fast is not None and fast.next is not None: 
+		fast, slow = fast.next.next, slow.next 
+	return slow # middle of linkedlist
 ```
