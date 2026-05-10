@@ -1,3 +1,9 @@
+Tips on asking yourself before solving the questions
+- Is this a directed or undirected graph? 
+- Does this need an adjacency list?
+- Do I need to detect cycles? 
+- Are these disconnected components?
+- Are the edges weighted?
 
 **Core Algorithm**
 Time Complexity: O(V + E)

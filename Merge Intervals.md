@@ -1,3 +1,13 @@
+Tips for determining which one to use: 
+	Insert Interval
+		- Do I have **sorted, non-overlapping** intervals plus **one new interval** to add?
+		- Can I merge only with neighbors in one pass?
+	K Way Merge
+		- Are there **k sorted sources** (each list sorted already)?
+	Heaps
+		- Can i reuse the resource that ends the earliest? 
+	sweep line
+		- Is the question asking about concurrency (counts), not the merged ranges?
 **Core Algorithm**
 ```python
 def mergeIntervals(intervals):
@@ -43,4 +53,18 @@ def insert(intervals, newInterval):
         i += 1
         
     return result
+```
+
+**K-Way Merge**
+```python
+
+```
+**Heaps**
+```python
+
+
+```
+
+**Sweep Line**
+```python
 ```
